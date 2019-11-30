@@ -9,3 +9,7 @@ Please make sure to update tests as appropriate.
 
 ## License
 [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+## Contact
+[Telegram])(https://t.me/zahilz)
+[Discord](https://discord.gg/N5npr6E)
