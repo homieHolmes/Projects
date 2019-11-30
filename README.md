@@ -1,5 +1,3 @@
-This line from remote repository
+This line is remoted from local repository
 
- This line is from local repository
-
-Git stashing demo line.
+Test Git stashing demo line using git bash.
