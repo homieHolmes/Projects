@@ -20,13 +20,12 @@ int main()
         x = rand() % 123;
         while(x < 35 || checking(x) == -1)
             x = rand() % 123;
-        numbers[i] = x;
+        *(numbers + i) = x;
     }
 
-    printf("Your Password = ");
+    printf("Your password : \"");
     for(i = 0; i < n; i++ )
-        printf("%c%s",numbers[i], i < n-1 ? "":"\n");
-
+        printf("%c%s",*(numbers + i), i < n-1 ? "":"\"\n");
     return(0);
 }
 
