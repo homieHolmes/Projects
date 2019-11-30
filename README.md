@@ -12,4 +12,5 @@ Please make sure to update tests as appropriate.
 
 ## Contact
 [Telegram](https://t.me/zahilz)
+
 [Discord](https://discord.gg/N5npr6E)
