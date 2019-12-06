@@ -67,7 +67,7 @@ void inputData(){
         printf("Enter Tel : ");
         scanf("%s",stu.tel);
 
-        //writeFile();
+        writeFile(stu.id, stu.name, stu.age, stu.gmail, stu.tel);
     }
 }
 
