@@ -18,12 +18,15 @@ int main(){
 
     char decision;
 
+    printf("A or L : ");
     scanf("%c", &decision);
 
-    if(decision == 'A')
+    if(decision == 'A'){
         printf("AAA");
-    else if (decision == 'L')
+    }
+    else if (decision == 'L'){
         printf("LLL");
+    }
         
     return 0;
 }
