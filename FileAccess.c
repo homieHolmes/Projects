@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <conio.h>
 
 //Student Struct 
 typedef struct{
@@ -18,17 +19,21 @@ int main(){
 
     char decision;
 
-    printf("A or L : ");
-    scanf("%c", &decision);
 
-    if(decision == 'A'){
-        printf("AAA");
-    }
-    else if (decision == 'L'){
-        printf("LLL");
-    }
+        printf("A or L : ");
+        scanf("%c", &decision);          
+
+        system("cls");
+
+    if(decision == 'A')
+        printf("AAA");   
+    else if (decision == 'L')
+        printf("LLL");   
+    else
+        printf("Enter A and L only !");
         
     return 0;
+
 }
 
 void inputData(){
