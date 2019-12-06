@@ -8,29 +8,20 @@ typedef struct{
     int age;
 }Student;
 
-//function
+//pre-defined function
 void inputData();
 
 int main(){
 
-    char choose;
+    char decision;
 
-    printf("Do you want to add more or locate (A / L) : ");
-    scanf("%c",choose);  
+    scanf("%c", &decision);
 
-//  system("cls");
-
-    if(choose == 'A')
-        printf("AAAA");
-            //Addfunction();
-        else if (choose == 'L')
-        printf("LLLL");
-            //Locatefunction();
-    
-
-
-
-
+    if(decision == 'A')
+        printf("AAA");
+    else if (decision == 'L')
+        printf("LLL");
+        
     return 0;
 }
 
@@ -39,30 +30,30 @@ void inputData(){
     int i; //loop control
 
     printf("Please Enter amount od Data : ");
-    scanf("%d",&amount);
+    scanf("%d", &amount);
 
     Student stu;
 
-    for(i=0;i<amount;i++){
+    for(i = 0; i < amount; i++){
         //ID
         printf("Enter ID : ");
-        scanf("%s",stu.id);
+        scanf("%s", stu.id);
 
         //NAME
         printf("Enter Name : ");
-        scanf("%s",stu.name);
+        scanf("%s", stu.name);
 
         //AGE
         printf("Enter Age : ");
-        scanf("%d",&stu.age);
+        scanf("%d", &stu.age);
 
         //GMAIL
         printf("Enter Gmail : ");
-        scanf("%s",stu.gmail);
+        scanf("%s", stu.gmail);
 
         //TEL
         printf("Enter Tel : ");
-        scanf("%s",stu.tel);
+        scanf("%s", stu.tel);
 
         //writeFile();
     }
