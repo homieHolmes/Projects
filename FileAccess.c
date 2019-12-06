@@ -10,6 +10,9 @@ typedef struct{
 
 //pre-defined function
 void inputData();
+//FILE Handle function
+void writeFile(char id[], char name[], int age, char gmail[], char tel[]);
+
 
 int main(){
 
@@ -55,6 +58,15 @@ void inputData(){
         printf("Enter Tel : ");
         scanf("%s", stu.tel);
 
-        //writeFile();
+        writeFile(stu.id, stu.name, stu.age, stu.gmail, stu.tel);
     }
+}
+
+void writeFile(char id[], char name[], int age, char gmail[], char tel[]){
+    FILE *opn;
+    opn = fopen("StudentData.txt","a");
+
+    fprintf(opn,"%s\t\t%s\t\t%d\t\t%s\t\t%s\n",id, name, age, gmail, tel);
+
+    fclose(opn);
 }
