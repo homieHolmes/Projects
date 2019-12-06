@@ -19,10 +19,10 @@ int main(){
     printf("Do you want to add more or locate (A / L) : ");
     scanf("%c",&choose);
 
-    if(strcmp(choose, "A") == 0)
+    if(choose == 'A')
         printf("Adding");
         //Addfunction();
-        else if (strcmp(choose, "L") == 0 )
+        else if (choose == 'L')
         printf("Locating");
         //Locatefunction();
              
