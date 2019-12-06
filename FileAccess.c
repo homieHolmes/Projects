@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 //Student Struct 
 typedef struct{
@@ -8,25 +8,20 @@ typedef struct{
     int age;
 }Student;
 
-
-
 int main(){
 
     char choose;
-    do{
+
     printf("Do you want to add more or locate (A / L) : ");
-    scanf("%c",choose);
+    scanf("%c",choose);  
 
-    if(choose != 'A' && choose != 'L')
-        printf("Please choose only A (for Adding) and L (for Locating).");
+//  system("cls");
 
-    }while(choose != 'A' || choose != 'L');
-
-system("cls");
-
-    if(choose == 'A'){
+    if(choose == 'A')
+        printf("AAAA");
             //Addfunction();
         else if (choose == 'L')
+        printf("LLLL");
             //Locatefunction();
     
 
