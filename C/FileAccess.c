@@ -3,7 +3,6 @@
 
 int main(){
 
-
-
+printf("12534");
     return 0;
 }
