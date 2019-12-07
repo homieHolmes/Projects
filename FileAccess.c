@@ -2,7 +2,6 @@
 #include <string.h>
 #include<conio.h>
 #include <stdlib.h>
-#include <conio.h>
 
 //Student Struct 
 typedef struct{
@@ -14,7 +13,7 @@ typedef struct{
 void inputData();
 void writeFile(char id[], char name[], int age, char gmail[], char tel[]); //file handle
 //function for L
-void readLine();
+void readFile();
 
 
 int main(){
@@ -77,7 +76,7 @@ void writeFile(char id[], char name[], int age, char gmail[], char tel[]){
     FILE *opn;
     opn = fopen("StudentData.txt","a");
 
-    fprintf(opn,"%s\t\t%s\t\t%d\t\t%s\t\t%s\n",id, name, age, gmail, tel);
+    fprintf(opn,"%s\t\t\t%s\t\t\t%d\t\t\t%s\t\t\t%s\n",id, name, age, gmail, tel);
 
     fclose(opn);
 }
