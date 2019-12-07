@@ -13,22 +13,23 @@ void inputData();
 void writeFile(char id[], char name[], int age, char gmail[], char tel[]); //file handle
 //function for L
 void readFile();
+void showFile();
 
 
 int main(){
 
     char decision;
 
-    printf("A or L : ");
+    printf("[A]dd or [L]ocate or [S]howfile : ");
     scanf("%c", &decision);          
 
-    if(decision == 'A'){
-        //printf("LLLL");
-        inputData();
-    }  
+    if(decision == 'A')
+        inputData();    
     else if (decision == 'L')
         printf("LLL");   
-    else
+    else if (decision == 'S')
+        showFile();
+    else 
         printf("Enter A and L only !");
         
     return 0;
@@ -79,3 +80,26 @@ void writeFile(char id[], char name[], int age, char gmail[], char tel[]){
 
     fclose(opn);
 }
+
+void showFile(){
+
+    system("cls");
+    FILE *opn;
+    opn = fopen("StudentData.txt","r");
+    if(opn == NULL){
+        printf("Error opening file.");
+        return;
+    }
+
+    char line[100];
+  while(1) {
+      fgets(line, 100, opn);
+      if( feof(opn) ) 
+         break ;      
+      printf("%s", line);
+    }
+
+   fclose(opn);   
+      
+}
+
