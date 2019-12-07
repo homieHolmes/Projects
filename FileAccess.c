@@ -30,13 +30,15 @@ int main(){
     else if (choose == 'L'){
         printf("LLLL");
     }
-    
+
     return 0;
 }
 
 void inputData(){
     int amount;
     int i; //loop control
+
+    system("cls");
 
     printf("Please Enter amount od Data : ");
     scanf("%d",&amount);
