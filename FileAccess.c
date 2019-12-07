@@ -2,6 +2,7 @@
 #include <string.h>
 #include<conio.h>
 #include <stdlib.h>
+#include <conio.h>
 
 //Student Struct 
 typedef struct{
@@ -18,20 +19,22 @@ void readLine();
 
 int main(){
 
-    char choose;
+    char decision;
 
-    printf("Do you want to add more or locate Data(A / L) : ");
-    scanf("%c",&choose);  
+    printf("A or L : ");
+    scanf("%c", &decision);          
 
-    if(choose == 'A'){
-        //printf("AAAA");
+    if(decision == 'A'){
+        //printf("LLLL");
         inputData();
-    }
-    else if (choose == 'L'){
-        printf("LLLL");
-    }
-
+    }  
+    else if (decision == 'L')
+        printf("LLL");   
+    else
+        printf("Enter A and L only !");
+        
     return 0;
+
 }
 
 void inputData(){
