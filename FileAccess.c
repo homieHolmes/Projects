@@ -42,7 +42,7 @@ void inputData(){
 
     system("cls");
 
-    printf("Please Enter amount od Data : ");
+    printf("Please Enter amount of Data : ");
     scanf("%d",&amount);
 
     Student stu;
