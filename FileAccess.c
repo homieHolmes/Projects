@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include<conio.h>
 #include <stdlib.h>
 
 //Student Struct 
@@ -8,26 +9,28 @@ typedef struct{
     int age;
 }Student;
 
-//pre-defined function
+//function for A
 void inputData();
-//FILE Handle function
-void writeFile(char id[], char name[], int age, char gmail[], char tel[]);
+void writeFile(char id[], char name[], int age, char gmail[], char tel[]); //file handle
+//function for L
+void readLine();
 
 
 int main(){
 
-    char decision;
+    char choose;
 
-    printf("A or L : ");
-    scanf("%c", &decision);
+    printf("Do you want to add more or locate Data(A / L) : ");
+    scanf("%c",&choose);  
 
-    if(decision == 'A'){
-        printf("AAA");
+    if(choose == 'A'){
+        //printf("AAAA");
+        inputData();
     }
-    else if (decision == 'L'){
-        printf("LLL");
+    else if (choose == 'L'){
+        printf("LLLL");
     }
-        
+    
     return 0;
 }
 
@@ -36,30 +39,30 @@ void inputData(){
     int i; //loop control
 
     printf("Please Enter amount od Data : ");
-    scanf("%d", &amount);
+    scanf("%d",&amount);
 
     Student stu;
 
-    for(i = 0; i < amount; i++){
+    for(i=0;i<amount;i++){
         //ID
         printf("Enter ID : ");
-        scanf("%s", stu.id);
+        scanf("%s",stu.id);
 
         //NAME
         printf("Enter Name : ");
-        scanf("%s", stu.name);
+        scanf("%s",stu.name);
 
         //AGE
         printf("Enter Age : ");
-        scanf("%d", &stu.age);
+        scanf("%d",&stu.age);
 
         //GMAIL
         printf("Enter Gmail : ");
-        scanf("%s", stu.gmail);
+        scanf("%s",stu.gmail);
 
         //TEL
         printf("Enter Tel : ");
-        scanf("%s", stu.tel);
+        scanf("%s",stu.tel);
 
         writeFile(stu.id, stu.name, stu.age, stu.gmail, stu.tel);
     }
