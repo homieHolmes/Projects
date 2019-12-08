@@ -23,14 +23,14 @@ int main(){
     printf("[A]dd or [L]ocate or [S]howfile : ");
     scanf("%c", &decision);          
 
-    if(decision == 'A')
+    if(decision == 'A'|| decision == 'a')
         inputData();    
-    else if (decision == 'L')
+    else if (decision == 'L' || decision == 'l')
         printf("LLL");   
-    else if (decision == 'S')
+    else if (decision == 'S' || decision == 's')
         showFile();
     else 
-        printf("Enter A and L only !");
+        printf("Enter A, L, S only !");
         
     return 0;
 
