@@ -4,7 +4,7 @@
 
 //Student Struct 
 typedef struct{
-    char id[10], name[30], tel[11], gmail[30];
+    char id[10], name[30], surname[30], tel[11], gmail[30];
     int age;
 }Student;
 
@@ -50,11 +50,11 @@ void inputData(){
     for(i=0;i<amount;i++){
         //ID
         printf("Enter ID : ");
-        scanf("%s",stu.id);
+        scanf(" %s",stu.id);
 
         //NAME
         printf("Enter Name : ");
-        scanf("%s",stu.name);
+        scanf("%s %s",stu.name,stu.surname);
 
         //AGE
         printf("Enter Age : ");
