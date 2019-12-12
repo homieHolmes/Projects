@@ -10,7 +10,7 @@ typedef struct{
 
 //function for A
 void inputData();
-void writeFile(char id[], char name[], int age, char gmail[], char tel[], int i, int amount); //file handle
+void writeFile(char id[], char name[], char surname[], int age, char gmail[], char tel[], int i, int amount); //file handle
 //function for L
 void findstd();
 void showFile();
@@ -68,15 +68,15 @@ void inputData(){
         printf("Enter Tel : ");
         scanf("%s",stu.tel);
 
-        writeFile(stu.id, stu.name, stu.age, stu.gmail, stu.tel, i, amount);
+        writeFile(stu.id, stu.name, stu.surname, stu.age, stu.gmail, stu.tel, i, amount);
     }
 }
 
-void writeFile(char id[], char name[], int age, char gmail[], char tel[], int i, int amount){
+void writeFile(char id[], char name[], char surname[], int age, char gmail[], char tel[], int i, int amount){
     FILE *opn;
     opn = fopen("StudentData.txt","a");
 
-    fprintf(opn,"%s\t\t%s\t\t%d\t\t%s\t\t%s%s",id, name, age, gmail, tel,i<amount-1?"\n":"");
+    fprintf(opn,"%s\t\t%s %s\t\t%d\t\t%s\t\t%s%s",id, name, surname, age, gmail, tel,i<amount-1?"\n":"");
 
     fclose(opn);
 }
@@ -94,9 +94,9 @@ void showFile(){
     char line[111];
   while(1) {
       fgets(line, 111, opn);
-      if( feof(opn) ) 
-         break ;      
       printf("%s", line);
+      if( feof(opn) )
+      break ;     
     }
 
    fclose(opn);   
@@ -117,8 +117,7 @@ void findstd(){
     printf("Enter student ID : ");
     scanf("%s", temp);
 
-    char line[112];
-    
+    char line[112];   
     int i=0;    
     printf("Finding \"%s\" completed.\n\n", temp);
     while(1){
