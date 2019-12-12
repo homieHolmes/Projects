@@ -23,6 +23,7 @@ int main(){
     printf("[A]dd [L]ocate [S]how or [F]ind : ");
     scanf("%c", &decision);          
 
+while(1){
     if(decision == 'A'|| decision == 'a')
         inputData();    
     else if (decision == 'L' || decision == 'l')
@@ -33,7 +34,7 @@ int main(){
         findstd();
     else
         printf("Enter A, L, S and F only !");
-        
+}        
     return 0;
 
 }
@@ -93,9 +94,9 @@ void showFile(){
         return;
     }
 
-    char line[112];
+    char line[111];
   while(1) {
-      fgets(line, 112, opn);
+      fgets(line, 111, opn);
       if( feof(opn) ) 
          break ;      
       printf("%s", line);
@@ -122,7 +123,7 @@ void findstd(){
     
     int i=0;
     system("cls");
-    printf("Finding completed.\n\n");
+    printf("Finding \"%s\" completed.\n\n", temp);
     while(1){
         fgets(line, 112, opn);
         if(strncmp(line, temp, 3) == 0 ){            
