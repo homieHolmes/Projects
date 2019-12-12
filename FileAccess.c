@@ -10,7 +10,7 @@ typedef struct{
 
 //function for A
 void inputData();
-void writeFile(char id[], char name[], int age, char gmail[], char tel[]); //file handle
+void writeFile(char id[], char name[], int age, char gmail[], char tel[], int i, int amount); //file handle
 //function for L
 void findstd();
 void showFile();
@@ -20,21 +20,18 @@ int main(){
 
     char decision;
 
-    printf("[A]dd [L]ocate [S]how or [F]ind : ");
+    printf("[A]dd [S]how or [F]ind : ");
     scanf("%c", &decision);          
 
-while(1){
     if(decision == 'A'|| decision == 'a')
         inputData();    
-    else if (decision == 'L' || decision == 'l')
-        printf("LLL");   
     else if (decision == 'S' || decision == 's')
         showFile();
     else if(decision == 'F' || decision == 'f')
         findstd();
-    else
+    else if(decision != 'A' && decision != 'S' && decision != 'F')
         printf("Enter A, L, S and F only !");
-}        
+
     return 0;
 
 }
@@ -71,15 +68,15 @@ void inputData(){
         printf("Enter Tel : ");
         scanf("%s",stu.tel);
 
-        writeFile(stu.id, stu.name, stu.age, stu.gmail, stu.tel);
+        writeFile(stu.id, stu.name, stu.age, stu.gmail, stu.tel, i, amount);
     }
 }
 
-void writeFile(char id[], char name[], int age, char gmail[], char tel[]){
+void writeFile(char id[], char name[], int age, char gmail[], char tel[], int i, int amount){
     FILE *opn;
     opn = fopen("StudentData.txt","a");
 
-    fprintf(opn,"%s\t\t\t%s\t\t\t%d\t\t\t%s\t\t\t%s\n",id, name, age, gmail, tel);
+    fprintf(opn,"%s\t\t%s\t\t%d\t\t%s\t\t%s%s",id, name, age, gmail, tel,i<amount-1?"\n":"");
 
     fclose(opn);
 }
@@ -107,6 +104,7 @@ void showFile(){
 }
 
 void findstd(){
+    system("cls");
     FILE *opn;
 
     opn = fopen("StudentData.txt", "r");
@@ -116,13 +114,12 @@ void findstd(){
     }
 
     char temp[112];
-    printf("What are you looking for ? : ");
+    printf("Enter student ID : ");
     scanf("%s", temp);
 
     char line[112];
     
-    int i=0;
-    system("cls");
+    int i=0;    
     printf("Finding \"%s\" completed.\n\n", temp);
     while(1){
         fgets(line, 112, opn);
