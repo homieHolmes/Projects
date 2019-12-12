@@ -14,7 +14,7 @@ void writeFile(char id[], char name[], char surname[], int age, char gmail[], ch
 //function for L
 void findstd();
 void showFile();
-
+void header();
 
 int main(){
 
@@ -69,6 +69,7 @@ void inputData(){
         scanf("%s",stu.tel);
 
         writeFile(stu.id, stu.name, stu.surname, stu.age, stu.gmail, stu.tel, i, amount);
+        printf("\n");
     }
 }
 
@@ -90,10 +91,10 @@ void showFile(){
         printf("Error opening file.");
         return;
     }
-
-    char line[111];
+    header();
+    char line[112];
   while(1) {
-      fgets(line, 111, opn);
+      fgets(line, 112, opn);
       printf("%s", line);
       if( feof(opn) )
       break ;     
@@ -118,8 +119,11 @@ void findstd(){
     scanf("%s", temp);
 
     char line[112];   
-    int i=0;    
+    int i=0;
+
+       
     printf("Finding \"%s\" completed.\n\n", temp);
+    header();
     while(1){
         fgets(line, 112, opn);
         if(strncmp(line, temp, 3) == 0 ){            
@@ -133,4 +137,8 @@ void findstd(){
         printf("No matches found...");             
   
     fclose(opn);
+}
+
+void header(){
+    printf("ID :\t\tName :\t\tAge :\t\tEmail :\t\tTel :\n");
 }
