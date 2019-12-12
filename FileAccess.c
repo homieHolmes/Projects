@@ -12,7 +12,7 @@ typedef struct{
 void inputData();
 void writeFile(char id[], char name[], int age, char gmail[], char tel[]); //file handle
 //function for L
-void readFile();
+void findstd();
 void showFile();
 
 
@@ -20,7 +20,7 @@ int main(){
 
     char decision;
 
-    printf("[A]dd or [L]ocate or [S]howfile : ");
+    printf("[A]dd [L]ocate [S]how or [F]ind : ");
     scanf("%c", &decision);          
 
     if(decision == 'A'|| decision == 'a')
@@ -29,8 +29,10 @@ int main(){
         printf("LLL");   
     else if (decision == 'S' || decision == 's')
         showFile();
-    else 
-        printf("Enter A, L, S only !");
+    else if(decision == 'F' || decision == 'f')
+        findstd();
+    else
+        printf("Enter A, L, S and F only !");
         
     return 0;
 
@@ -91,9 +93,9 @@ void showFile(){
         return;
     }
 
-    char line[100];
+    char line[112];
   while(1) {
-      fgets(line, 100, opn);
+      fgets(line, 112, opn);
       if( feof(opn) ) 
          break ;      
       printf("%s", line);
@@ -103,3 +105,35 @@ void showFile(){
       
 }
 
+void findstd(){
+    FILE *opn;
+
+    opn = fopen("StudentData.txt", "r");
+    if(opn == NULL){
+        printf("Error opening StudentData.txt");
+        exit(-1);
+    }
+
+    char temp[112];
+    printf("What are you looking for ? : ");
+    scanf("%s", temp);
+
+    char line[112];
+    
+    int i=0;
+    system("cls");
+    printf("Finding completed.\n\n");
+    while(1){
+        fgets(line, 112, opn);
+        if(strncmp(line, temp, 3) == 0 ){            
+            printf("%s\n",line); 
+            i++;
+        } 
+        if(feof(opn))
+            break;
+    }
+    if(i==0)
+        printf("No matches found...");             
+  
+    fclose(opn);
+}

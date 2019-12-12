@@ -8,6 +8,7 @@
 
 void descending(int *x, int n);
 void ascending(int *x, int n);
+void flip(int *data, int n);
 
 int main()
 {
@@ -33,6 +34,11 @@ int main()
     for(int i = 0; i < n; i++)
         printf("%d%s",*(ptr + i),i<n-1 ? ", " : "}\n" );
 
+    flip(ptr, n);
+    printf("Ascending order[flipped] : {");
+    for(int i = 0; i < n; i++)
+    printf("%d%s",*(ptr + i),i<n-1 ? ", " : "}\n");
+
     return 0;
 }
 
@@ -55,3 +61,15 @@ void ascending(int *x, int n){
             *(x + j) = temp;
     }
 }
+
+void flip(int *data, int n){
+    int i, j, temp;
+
+    for(i=0; i<j; i++){
+        for(j=n; j>i; j--){
+        temp = *(data + i);
+        *(data + i) = *(data + j);
+        *(data + j) = temp; 
+        }       
+    }
+}   

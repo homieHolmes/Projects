@@ -26,6 +26,8 @@ int main()
     printf("Your password : \"");
     for(i = 0; i < n; i++ )
         printf("%c%s",*(numbers + i), i < n-1 ? "":"\"\n");
+
+        free(numbers);
     return(0);
 }
 
