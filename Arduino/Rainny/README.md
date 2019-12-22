@@ -4,4 +4,4 @@
 - 1x motor
 - wires
 
-[VIDEO]https://youtu.be/W09lKyoxFwU
+[VIDEO](https://youtu.be/W09lKyoxFwU)
